@@ -16,7 +16,7 @@ parameter_defaults:
   NeutronTenantNetworkType: vlan
   NeutronNetworkVLANRanges: physnet1:3001:3009
   ExtraConfig:
-neutron::server::service_providers: [ 'L2GW:OpenDaylight:networking_odl.l2gateway.driver.OpenDaylightL2gwDriver:default' ]
+    neutron::server::service_providers: [ 'L2GW:OpenDaylight:networking_odl.l2gateway.driver.OpenDaylightL2gwDriver:default' ]
 
   #enable DHCP on ODL
   opendaylight::enable_dhcp: true
@@ -26,10 +26,10 @@ neutron::server::service_providers: [ 'L2GW:OpenDaylight:networking_odl.l2gatewa
   NovaSchedulerDefaultFilters: ['RetryFilter','AvailabilityZoneFilter','RamFilter','ComputeFilter','ComputeCapabilitiesFilter','ImagePropertiesFilter','ServerGroupAntiAffinityFilter','ServerGroupAffinityFilter','PciPassthroughFilter']
   NovaSchedulerAvailableFilters: ["nova.scheduler.filters.all_filters","nova.scheduler.filters.pci_passthrough_filter.PciPassthroughFilter"]
   # Provide the vendorid:productid of the PF,VFs
-  NeutronSupportedPCIVendorDevs: ['8086:10ed','8086:10fb']
-  NeutronPhysicalDevMappings: "physnet1:em2"
+  #NeutronSupportedPCIVendorDevs: ['8086:10ed','8086:10fb']
+  #NeutronPhysicalDevMappings: "physnet1:em2"
   # Number of VFs that needs to be configured for a physical interface
-  NeutronSriovNumVFs: "em2:8"
-  NovaPCIPassthrough:
-- devname: "em2"
-  physical_network: "physnet1"
+  #NeutronSriovNumVFs: "em2:8"
+  #NovaPCIPassthrough:
+  #- devname: "em2"
+  #  physical_network: "physnet1"
