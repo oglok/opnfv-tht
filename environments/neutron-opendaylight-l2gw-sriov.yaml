@@ -15,6 +15,7 @@ parameter_defaults:
   NeutronNetworkType: 'vxlan'
   NeutronTenantNetworkType: vlan
   NeutronNetworkVLANRanges: physnet1:3001:3009
+  NeutronServicePlugins: 'networking_l2gw.services.l2gateway.plugin.L2GatewayPlugin'
   ExtraConfig:
     neutron::server::service_providers: [ 'L2GW:OpenDaylight:networking_odl.l2gateway.driver.OpenDaylightL2gwDriver:default' ]
 
